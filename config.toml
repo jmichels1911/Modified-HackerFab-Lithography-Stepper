@@ -1,0 +1,58 @@
+# This section configures the camera used for the GUI's preview.
+[camera]
+# Available options are:
+# "webcam" (for a generic USB camera),
+# "basler" (for a Basler/Pylon camera)
+# "flir" (for a FLIR camera)
+# "none" (to disable camera)
+type = "flir"
+# The index field is optional and is only used to select which of multiple webcams or basler/pylon cameras should be used,
+# e.g. on a laptop where there may be a builtin webcam in addition to an external USB camera.
+index = 1
+# The output from the camera is typically too large to show at full resolution.
+# This parameter adjusts the size of the camera feed before it is displayed in the GUI.
+gui-scale = 0.5
+# The following two values adjust the *camera* exposure in microseconds when viewing red or UV light.
+# Note that using values that are not a multiple of 4167 can lead to flickering.
+red-exposure = 4167.0
+uv-exposure = 25000.0
+
+# This section configures the motion stage
+[stage]
+# Set enabled to false to disable all motion.
+enabled = true
+
+# Set homing to false if your stage does not have limit sensors
+homing = true
+
+# Enable tiling if user wishes to use tiling features
+tiling = true
+
+# Set autofocus offset, requires homing to be true. Set 0 for no autofocus 
+autofocus = 0
+
+# Select the correct serial port for the device running GRBL.
+# The correct serial port can be checked with Device Manager on Windows.
+port = "COM3"
+# Select the type of stage for the stepper. Use `grbl` for most cases while `omm` is 
+# experimental
+type = "grbl"
+# GRBL's baud rate is almost always 115200 while omm is almost always 921600 
+baud-rate = 115200
+[stage.omm]
+z-max = -1
+
+# This section configures alignment marker detection
+[alignment]
+# Enable or disable real-time detection of alignment markers
+enabled = true
+# Path to the YOLO model weights file
+model_path = "ckpts/best.pt"
+# Alignment marker reference coordinates (in pixels)
+right_marker_x = 1820.0  # x-coordinate for markers on the right side
+top_marker_y = 269.0     # y-coordinate for markers on the top
+bottom_marker_y = 1075.0 # y-coordinate for markers on the bottom
+left_marker_x = 280.0    # x-coordinate for markers on the left side
+# Scaling factors for converting normalized differences to stage movements (in µm)
+x_scale_factor = -1100   # Scaling factor for x-axis movements
+y_scale_factor = 800     # Scaling factor for y-axis movements
