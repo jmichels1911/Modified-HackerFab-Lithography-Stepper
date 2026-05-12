@@ -1,0 +1,12 @@
+To run the GDS to PNG conversion follow the Instructions below:
+
+In KLayout - 
+Once the layout has been finished, go to Save As "full_design.gds", or alternatively head into the gds2png.py and replace "full_design.gds" with you new file name 
+Continue to Powershell for the instructions below.
+
+From within Powershell -
+
+cd "C:\Users\LithoStepper\Downloads\stepper_modified\stepper_modified\PhotoMasks"
+py -3.10 gds2png.py
+
+#Once this has run successfully look into the photomasks file location and see all of the generated pngs.
