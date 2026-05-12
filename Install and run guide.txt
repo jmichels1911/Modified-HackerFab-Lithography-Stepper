@@ -1,0 +1,12 @@
+Install and run guide:
+install Flir SDK and Pysim from (https://www.teledynevisionsolutions.com/support/support-center/software-firmware-downloads/iis/spinnaker-sdk-download/spinnaker-sdk--download-files/)
+
+run prompts below:
+
+you have to install the spinnaker python wheel and move that file to your downloads for this to work.
+*py -3.10 -m pip install spinnaker_python-x.x.x.xxx-cp310-cp310-win_amd64.whl Update to the file name downloaded in the full_setup.ps1 line 32.
+
+
+cd Downloads
+powershell.exe -ExecutionPolicy Bypass -File .\full_setup.ps1
+powershell.exe -ExecutionPolicy Bypass -File .\run_gui.ps1

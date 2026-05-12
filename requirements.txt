@@ -1,0 +1,17 @@
+# Backup Requirements for Lithography Stepper
+# Install with: py -3.10 -m pip install -r requirements.txt
+
+Pillow
+pyserial
+numpy<2
+toml
+ultralytics
+opencv-python
+colorama
+
+# --- SPECIAL INSTRUCTION FOR FLIR CAMERA ---
+# PySpin CANNOT be installed via standard pip. DO NOT run 'pip install pyspin'.
+# You must download the Spinnaker SDK Python wheel for Windows 64-bit/Python 3.10
+# (e.g., spinnaker_python-3.X.X.X-cp310-cp310-win_amd64.whl) from Teledyne FLIR 
+# and install it directly from the local file:
+# py -3.10 -m pip install spinnaker_python-3.X.X.X-cp310-cp310-win_amd64.whl
